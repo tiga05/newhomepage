@@ -14,7 +14,8 @@ import {
   VGrid,
   VToolbar,
   transitions,
-  VParallax
+  VParallax,
+  VCard
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
@@ -29,7 +30,8 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     transitions,
-    VParallax
+    VParallax,
+    VCard
   },
   theme: {
     primary: '#ee44aa',
