@@ -12,6 +12,7 @@
             justify-center
             class="white--text"
           >
+
             <img src="../static/images/vuetify.png" alt="Vuetify.js" height="200">
             <h1 class="white--text mb-2 display-1 text-xs-center">Parallax Template</h1>
             <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
@@ -36,7 +37,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="headline">The best way to start developing</h2>
+              <h2 class="headline">{{ $t("message.hello") }}</h2>
               <span class="subheading">
                 Cras facilisis mi vitae nunc 
               </span>
