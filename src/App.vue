@@ -1,8 +1,13 @@
 <template>
    <v-app light>
-    <v-toolbar class="white">
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-    </v-toolbar>
+     <v-toolbar fixed flat  style="opacity:0.9">
+    <v-toolbar-title >Trinkfreunde Heidelberg</v-toolbar-title>
+      <v-spacer></v-spacer>
+    <v-btn flat class="transparent">START</v-btn>
+    <v-btn flat class="transparent">RULES</v-btn>
+    <v-btn flat class="transparent">Teamspeak</v-btn>
+    <v-btn flat class="transparent">Minecraft-Viewer</v-btn>
+  </v-toolbar>
     <v-content>
       <section>
         <v-parallax src="../static/images/hero.jpeg" height="600">
