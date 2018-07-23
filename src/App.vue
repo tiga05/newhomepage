@@ -3,10 +3,12 @@
       <v-toolbar fixed flat  style="opacity:0.9">
          <v-toolbar-title >Trinkfreunde Heidelberg</v-toolbar-title>
          <v-spacer></v-spacer>
-         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description1', options)">START</v-btn>
-         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description2', options)">RULES</v-btn>
-         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description3', options)">Teamspeak</v-btn>
-         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description4', options)">Minecraft-Viewer</v-btn>
+         <v-btn  flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description1', options)">{{ $t("message.navbar.start") }}</v-btn>
+         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description2', options)">{{ $t("message.navbar.rules") }}</v-btn>
+         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description3', options)">{{ $t("message.navbar.teamspeak") }}</v-btn>
+         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description4', options)">{{ $t("message.navbar.minecraft") }}</v-btn>
+         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description5', options)">{{ $t("message.navbar.contact") }}</v-btn>
+         <v-btn flat class="transparent hidden-md-and-up" v-on:click="drawer = !drawer" ><v-icon>menu</v-icon></v-btn>
       </v-toolbar>
       <v-content>
          <section>
@@ -123,6 +125,47 @@
             </v-layout>
          </v-footer>
       </v-content>
+
+         <v-container>
+        <v-layout justify-center>
+          <v-btn
+            color="pink"
+            dark
+            @click.stop="drawer = !drawer"
+          >
+            Toggle
+          </v-btn>
+        </v-layout>
+      </v-container>
+  
+      <v-navigation-drawer v-model="drawer" absolute temporary>
+        <v-list class="pa-1">
+                 <v-list-tile>
+             <v-list-tile-avatar>
+              <v-icon>menu</v-icon>
+             </v-list-tile-avatar>
+            {{ $t("message.navbar.rules") }}
+          </v-list-tile>
+          <v-list-tile>
+                         <v-list-tile-avatar>
+              <v-icon>menu</v-icon>
+             </v-list-tile-avatar>
+            {{  $t("message.navbar.teamspeak") }}
+          </v-list-tile>
+          <v-list-tile>
+                         <v-list-tile-avatar>
+              <v-icon>menu</v-icon>
+             </v-list-tile-avatar>
+            {{ $t("message.navbar.minecraft") }}
+          </v-list-tile>
+          <v-list-tile>
+                         <v-list-tile-avatar>
+              <v-icon>menu</v-icon>
+             </v-list-tile-avatar>
+            {{ $t("message.navbar.contact") }}
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
    </v-app>
 </template>
 
@@ -145,7 +188,7 @@ export default {
   data () {
     return {
       clipped: false,
-      drawer: true,
+      drawer: false,
       fixed: false,
       message: 'Hello',
       items: [{
