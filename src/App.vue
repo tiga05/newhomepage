@@ -3,10 +3,10 @@
       <v-toolbar fixed flat  style="opacity:0.9">
          <v-toolbar-title >Trinkfreunde Heidelberg</v-toolbar-title>
          <v-spacer></v-spacer>
-         <v-btn flat class="transparent">START</v-btn>
-         <v-btn flat class="transparent">RULES</v-btn>
-         <v-btn flat class="transparent">Teamspeak</v-btn>
-         <v-btn flat class="transparent">Minecraft-Viewer</v-btn>
+         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description1', options)">START</v-btn>
+         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description2', options)">RULES</v-btn>
+         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description3', options)">Teamspeak</v-btn>
+         <v-btn flat class="transparent" @click="$vuetify.goTo('#Description4', options)">Minecraft-Viewer</v-btn>
       </v-toolbar>
       <v-content>
          <section>
@@ -32,7 +32,7 @@
             </v-parallax>
          </section>
          <section>
-            <Description1></Description1>
+            <Description1 id="Description1"></Description1>
          </section>
          <section>
             <v-parallax src="../static/images/section.jpg" height="380">
@@ -51,7 +51,7 @@
             </v-parallax>
          </section>
          <section>
-            <Description2></Description2>
+            <Description2 id="Description2"></Description2>
          </section>
          <section>
             <v-parallax src="../static/images/section.jpg" height="380">
@@ -70,7 +70,7 @@
             </v-parallax>
          </section>
          <section>
-            <Description3></Description3>
+            <Description3 id="Description3"></Description3>
          </section>
          <section>
             <v-parallax src="../static/images/section.jpg" height="380">
@@ -89,7 +89,7 @@
             </v-parallax>
          </section>
          <section>
-            <Description4></Description4>
+            <Description4 id="Description4"></Description4>
          </section>
          <section>
             <v-parallax src="../static/images/section.jpg" height="380">
@@ -108,7 +108,7 @@
             </v-parallax>
          </section>
          <section>
-            <Description5></Description5>
+            <Description5 id="Description5"></Description5>
          </section>
          <v-footer class="blue darken-2">
             <v-layout row wrap align-center>
@@ -159,7 +159,13 @@ export default {
     }
   },
   computed: {
-    // a computed getter
+    options () {
+      return {
+        duration: 300,
+        easing: 'easeInQuart',
+        offset: -112
+      }
+    }
   },
   name: 'App'
 }
