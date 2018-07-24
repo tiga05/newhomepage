@@ -138,7 +138,7 @@
         </v-layout>
       </v-container>
   
-      <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-navigation-drawer style="position:fixed; top:0; left:0;" v-model="drawer" absolute temporary>
         <v-list class="pa-1">
                  <v-list-tile>
              <v-list-tile-avatar>
