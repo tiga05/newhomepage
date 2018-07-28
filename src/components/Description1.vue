@@ -25,6 +25,7 @@
                         <div class="headline text-xs-center">Material Design</div>
                      </v-card-title>
                      <v-card-text>
+                         {{ $t("message.description1.text1") }}
                         Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. 
                         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
                         Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti. 

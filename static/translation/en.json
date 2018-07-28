@@ -1,3 +1,11 @@
 {
-    "s1":"The best way to start developing!"
+    "s1":"The bes way to start with development!",
+
+    "navbar":{
+        "start":"Start",
+        "rules":"Rules",
+        "teamspeak":"Teamspeak",
+        "minecraft":"Minecraft-Viewer",
+        "contact":"Contacs"
+    }
 }
