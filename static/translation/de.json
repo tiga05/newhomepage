@@ -1,5 +1,9 @@
 {
-    "s1":"Der beste Weg mit der Entwicklung zu starten!",
+    "s1":"Willkommenstext?",
+    "s2":"Regeln?",
+    "s3":"Der beste Weg mit der Entwicklung zu starten!",
+    "s4":"Der beste Weg mit der Entwicklung zu starten!",
+    "s5":"Der beste Weg mit der Entwicklung zu starten!",
 
     "navbar":{
         "start":"Start",
@@ -7,8 +11,5 @@
         "teamspeak":"Teamspeak",
         "minecraft":"Minecraft-Viewer",
         "contact":"Kontakt"
-    },
-    "description1":{
-        "text1":"Das ist ein Text"
     }
 }

@@ -6,6 +6,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueI18n from 'vue-i18n'
+import Vuex from 'vuex'
+import store from './store'
 import {
   Vuetify,
   VApp,
@@ -20,8 +22,11 @@ import {
   VParallax,
   VCard
 } from 'vuetify'
+
 import '../node_modules/vuetify/src/stylus/app.styl'
+
 Vue.use(VueI18n)
+Vue.use(Vuex)
 Vue.use(Vuetify, {
   components: {
     VApp,
@@ -67,6 +72,7 @@ new Vue({
   i18n,
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

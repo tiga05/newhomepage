@@ -1,15 +1,7 @@
 <template>
    <v-app light>
-      <v-toolbar fixed flat  style="opacity:0.9">
-         <v-toolbar-title >Trinkfreunde Heidelberg</v-toolbar-title>
-         <v-spacer></v-spacer>
-         <v-btn  flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description1', options)">{{ $t("message.navbar.start") }}</v-btn>
-         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description2', options)">{{ $t("message.navbar.rules") }}</v-btn>
-         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description3', options)">{{ $t("message.navbar.teamspeak") }}</v-btn>
-         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description4', options)">{{ $t("message.navbar.minecraft") }}</v-btn>
-         <v-btn flat class="transparent hidden-sm-and-down" @click="$vuetify.goTo('#Description5', options)">{{ $t("message.navbar.contact") }}</v-btn>
-         <v-btn flat class="transparent hidden-md-and-up" v-on:click="drawer = !drawer" ><v-icon>menu</v-icon></v-btn>
-      </v-toolbar>
+     <Toolbar></Toolbar>
+     <Sidebar></Sidebar>
       <v-content>
          <section>
             <v-parallax src="../static/images/hero.jpeg" height="600">
@@ -111,6 +103,8 @@
          </section>
          <section>
             <Description5 id="Description5"></Description5>
+            HALAL
+                           <h1> {{naviState}} </h1> 
          </section>
          <v-footer class="blue darken-2">
             <v-layout row wrap align-center>
@@ -138,43 +132,18 @@
         </v-layout>
       </v-container>
   
-      <v-navigation-drawer style="position:fixed; top:0; left:0;" v-model="drawer" absolute temporary>
-        <v-list class="pa-1">
-                 <v-list-tile>
-             <v-list-tile-avatar>
-              <v-icon>menu</v-icon>
-             </v-list-tile-avatar>
-            {{ $t("message.navbar.rules") }}
-          </v-list-tile>
-          <v-list-tile>
-                         <v-list-tile-avatar>
-              <v-icon>menu</v-icon>
-             </v-list-tile-avatar>
-            {{  $t("message.navbar.teamspeak") }}
-          </v-list-tile>
-          <v-list-tile>
-                         <v-list-tile-avatar>
-              <v-icon>menu</v-icon>
-             </v-list-tile-avatar>
-            {{ $t("message.navbar.minecraft") }}
-          </v-list-tile>
-          <v-list-tile>
-                         <v-list-tile-avatar>
-              <v-icon>menu</v-icon>
-             </v-list-tile-avatar>
-            {{ $t("message.navbar.contact") }}
-          </v-list-tile>
-        </v-list>
-      </v-navigation-drawer>
+
    </v-app>
 </template>
-
 <script>
+import { mapState } from 'vuex'
 import Description1 from './components/Description1.vue'
 import Description2 from './components/Description2.vue'
 import Description3 from './components/Description3.vue'
 import Description4 from './components/Description4.vue'
 import Description5 from './components/Description5.vue'
+import Toolbar from './components/Toolbar.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   components: {
@@ -182,7 +151,9 @@ export default {
     Description2,
     Description3,
     Description4,
-    Description5
+    Description5,
+    Toolbar,
+    Sidebar
 
   },
   data () {
@@ -202,13 +173,7 @@ export default {
     }
   },
   computed: {
-    options () {
-      return {
-        duration: 300,
-        easing: 'easeInQuart',
-        offset: -112
-      }
-    }
+    ...mapState(['naviState'])
   },
   name: 'App'
 }
